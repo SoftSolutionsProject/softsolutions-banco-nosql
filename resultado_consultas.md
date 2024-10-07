@@ -52,8 +52,9 @@ db.cursos.find(
 ---
 
 ## Consultar Inscrições de Alunos com Status Específico
-**Código da Consulta**:
 Retorna todas as inscrições de alunos que possuem um status específico (por exemplo, statusInscricao: 1). Isso é útil para verificar quais alunos possuem inscrições ativas ou em um determinado estado.
+
+**Código da Consulta**:
 ```javascript
 use('soft')
 db.inscricao.find(
@@ -105,8 +106,8 @@ db.inscricao.find(
 ---
 
 ## Consultar Módulos Concluídos de um Curso Específico
-**Código da Consulta**:
 Busca módulos que foram concluídos em um curso específico, identificando os módulos que já foram completados por alunos. Isso ajuda a monitorar o progresso dos alunos em um curso.
+
 **Código da Consulta**:
 ```javascript
 use('soft')
@@ -115,6 +116,7 @@ db.modulo.find(
   { _idModulo: 1, nomeModulo: 1}
 )
 ```
+
 **Resultado**:
 ```json
 [
@@ -132,6 +134,7 @@ db.modulo.find(
 
 ## Consultar Suporte Baseado em Assuntos Específicos com a palavra "problema"
 Retorna todos os registros de suporte que têm "problema" no campo de assunto. Ela é útil para identificar e analisar as questões que estão sendo relatadas pelos usuários.
+
 **Código da Consulta**:
 ```javascript
 use('soft')
@@ -140,6 +143,7 @@ db.suporte.find(
   { _idSuporte: 1, assunto: 1, emailVisitante: 1 }
 )
 ```
+
 **Resultado**:
 ```json
 [
@@ -166,6 +170,7 @@ db.suporte.find(
 
 ## Consultar Usuários que São Alunos e Têm um CPF Específico
 Busca usuários que são alunos e possuem um CPF específico (cpfUsuario: 10234567890). É útil para localizar as informações de um aluno.
+
 **Código da Consulta**:
 ```javascript
 use('soft')
@@ -174,6 +179,7 @@ db.usuario.find(
   { _idUser: 1, nomeUsuario: 1, email: 1 }
 )
 ```
+
 **Resultado**:
 ```json
 [
@@ -363,6 +369,7 @@ db.inscricao.aggregate([
 ---
 
 ## Junção entre Inscrições e Cursos (Obter todas as inscrições e seus cursos correspondentes)
+
 **Código da Consulta**:
 ```javascript
 use('soft')
