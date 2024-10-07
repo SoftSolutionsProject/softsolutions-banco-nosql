@@ -10,7 +10,7 @@ db.certificado.find(
 ```
 
 **Resultado**:
-```
+```json
 [
   {
     "_id": {
@@ -37,7 +37,7 @@ db.cursos.find(
 ```
 
 **Resultado**:
-```
+```json
 [
   {
     "_id": {
@@ -62,7 +62,7 @@ db.inscricao.find(
 )
 ```
 **Resultado**:
-```
+```json
 [
   {
     "_id": {
@@ -116,7 +116,7 @@ db.modulo.find(
 )
 ```
 **Resultado**:
-```
+```json
 [
   {
     "_id": {
@@ -141,7 +141,7 @@ db.suporte.find(
 )
 ```
 **Resultado**:
-```
+```json
 [
   {
     "_id": {
@@ -175,7 +175,7 @@ db.usuario.find(
 )
 ```
 **Resultado**:
-```
+```json
 [
   {
     "_id": {
