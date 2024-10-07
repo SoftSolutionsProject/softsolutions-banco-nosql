@@ -99,6 +99,7 @@ db.inscricao.find(
 
 ## Consultar Módulos Concluídos de um Curso Específico
 **Código da Consulta**:
+Busca módulos que foram concluídos em um curso específico, identificando os módulos que já foram completados por alunos. Isso ajuda a monitorar o progresso dos alunos em um curso.
 ```
 use('soft')
 db.modulo.find(
@@ -120,6 +121,7 @@ db.modulo.find(
 ```
 
 ## Consultar Suporte Baseado em Assuntos Específicos com a palavra "problema"
+Retorna todos os registros de suporte que têm "problema" no campo de assunto. Ela é útil para identificar e analisar as questões que estão sendo relatadas pelos usuários.
 **Código da Consulta**:
 ```
 use('soft')
@@ -151,6 +153,7 @@ db.suporte.find(
 ```
 
 ## Consultar Usuários que São Alunos e Têm um CPF Específico
+Busca usuários que são alunos e possuem um CPF específico (cpfUsuario: 10234567890). É útil para localizar as informações de um aluno.
 **Código da Consulta**:
 ```
 use('soft')
@@ -169,6 +172,111 @@ db.usuario.find(
     "_idUser": 6,
     "nomeUsuario": "João Silva",
     "email": "joao.silva@hotmail.com"
+  }
+]
+```
+
+## Encontrar Alunos Dentro de um Raio de 20 km do Centro de Sorocaba
+Retorna todos os alunos que estão dentro de um raio de 20 km do centro de Sorocaba. Essa consulta é útil para localizar alunos em uma área geográfica específica.
+
+**Código da Consulta**:
+```javascript
+use('soft')
+db.usuario.find({
+    tipo: "aluno",
+    localizacao: {
+        $geoWithin: {
+            $centerSphere: [[-47.4584, -23.5018], 20 / 6378.1] 
+        }
+    }
+},{nomeUsuario:1, _id:0})
+```
+
+**Resultado**:
+```json
+[
+  {
+    "nomeUsuario": "João Silva"
+  }
+]
+```
+
+---
+
+## Encontrar Alunos Dentro de um Polígono Definido na Cidade de Itu
+
+**Código da Consulta**:
+```javascript
+use('soft')
+db.usuario.find({
+    tipo: "aluno",
+    localizacao: {
+        $geoWithin: {
+            $geometry: {
+                type: "Polygon",
+                coordinates: [
+                    [
+                        [-47.2960, -23.2259],
+                        [-47.3674, -23.2416],
+                        [-47.3765, -23.2900],
+                        [-47.3708, -23.3457],
+                        [-47.3243, -23.3753],
+                        [-47.2682, -23.3774],
+                        [-47.2167, -23.3358],
+                        [-47.1974, -23.2796],
+                        [-47.2195, -23.2249],
+                        [-47.2960, -23.2259]  
+                    ]
+                ]
+            }
+        }
+    }
+}, {nomeUsuario: 1, _id: 0});
+```
+
+**Resultado**:
+```json
+[
+  {
+    "nomeUsuario": "Marcos Santos"
+  },
+  {
+    "nomeUsuario": "Ana Souza"
+  },
+  {
+    "nomeUsuario": "Carla Ferreira"
+  }
+]
+```
+
+---
+
+## Encontrar Administradores em um Raio de 3 km de um Endereço Específico na Cidade de Votorantim (Prefeitura Municipal)
+
+**Código da Consulta**:
+```javascript
+use('soft')
+db.usuario.find({
+    tipo: "administrador",
+    localizacao: {
+        $geoWithin: {
+            $centerSphere: [[-47.447341, -23.540871], 3 / 6378.1] 
+        }
+    }
+},{nomeUsuario:1, _id:0})
+```
+
+**Resultado**:
+```json
+[
+  {
+    "nomeUsuario": "Simas S. Filho"
+  },
+  {
+    "nomeUsuario": "Paulo Sérgio Coelho"
+  },
+  {
+    "nomeUsuario": "Sandra S. Lima"
   }
 ]
 ```
