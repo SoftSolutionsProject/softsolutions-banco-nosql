@@ -197,7 +197,6 @@ db.usuario.find(
 ---
 
 ## Encontrar Alunos Dentro de um Raio de 20 km do Centro de Sorocaba
-Retorna todos os alunos que estão dentro de um raio de 20 km do centro de Sorocaba. Essa consulta é útil para localizar alunos em uma área geográfica específica.
 
 **Código da Consulta**:
 ```javascript
