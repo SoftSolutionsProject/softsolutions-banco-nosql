@@ -22,6 +22,8 @@ db.certificado.find(
 ]
 ```
 
+---
+
 ## Consultar Cursos com Nomes Específicos
 Busca cursos com nomes específicos, como "Desenvolvimento Web". Essa consulta pode ser usada para verificar se determinados cursos estão disponíveis na plataforma.
 
@@ -46,6 +48,8 @@ db.cursos.find(
   }
 ]
 ```
+
+---
 
 ## Consultar Inscrições de Alunos com Status Específico
 **Código da Consulta**:
@@ -98,6 +102,8 @@ db.inscricao.find(
 ]
 ```
 
+---
+
 ## Consultar Módulos Concluídos de um Curso Específico
 **Código da Consulta**:
 Busca módulos que foram concluídos em um curso específico, identificando os módulos que já foram completados por alunos. Isso ajuda a monitorar o progresso dos alunos em um curso.
@@ -121,6 +127,8 @@ db.modulo.find(
   }
 ]
 ```
+
+---
 
 ## Consultar Suporte Baseado em Assuntos Específicos com a palavra "problema"
 Retorna todos os registros de suporte que têm "problema" no campo de assunto. Ela é útil para identificar e analisar as questões que estão sendo relatadas pelos usuários.
@@ -154,6 +162,8 @@ db.suporte.find(
 ]
 ```
 
+---
+
 ## Consultar Usuários que São Alunos e Têm um CPF Específico
 Busca usuários que são alunos e possuem um CPF específico (cpfUsuario: 10234567890). É útil para localizar as informações de um aluno.
 **Código da Consulta**:
@@ -177,6 +187,8 @@ db.usuario.find(
   }
 ]
 ```
+
+---
 
 ## Encontrar Alunos Dentro de um Raio de 20 km do Centro de Sorocaba
 Retorna todos os alunos que estão dentro de um raio de 20 km do centro de Sorocaba. Essa consulta é útil para localizar alunos em uma área geográfica específica.
@@ -283,6 +295,8 @@ db.usuario.find({
 ]
 ```
 
+---
+
 ## Junção entre Inscrições e Usuario (listar todas as inscrições para o curso "Desenvolvimento de Apps", retornando, ainda, informações sobre os alunos inscritos.)
 
 **Código da Consulta**:
@@ -346,6 +360,7 @@ db.inscricao.aggregate([
 ]
 ```
 
+---
 
 ## Junção entre Inscrições e Cursos (Obter todas as inscrições e seus cursos correspondentes)
 **Código da Consulta**:
