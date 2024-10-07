@@ -1,12 +1,15 @@
 ## Consultar Certificados Emitidos Após uma Data Específica
 
 **Código da Consulta**:
+```
 use('soft')
 db.certificado.find(
   { dataEmissao: { $gt: "2017-06-01" } }  
 )
+```
 
 **Resultado**:
+```
 [
   {
     "_id": {
@@ -16,17 +19,21 @@ db.certificado.find(
     "dataEmissao": "2018-09-25"
   }
 ]
+```
 
 ## Consultar Cursos com Nomes Específicos
 
 **Código da Consulta**:
+```
 use('soft')
 db.cursos.find(
   { nomeCurso: { $in: ["Desenvolvimento Web"] } },
   { _idCurso: 1, nomeCurso: 1}
 )
+```
 
 **Resultado**:
+```
 [
   {
     "_id": {
@@ -36,3 +43,4 @@ db.cursos.find(
     "nomeCurso": "Desenvolvimento Web"
   }
 ]
+```
