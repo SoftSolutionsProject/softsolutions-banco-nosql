@@ -1,4 +1,5 @@
 ## Consultar Certificados Emitidos Após uma Data Específica
+Retorna todos os certificados que foram emitidos após 1º de junho de 2017. Isso é útil para verificar a emissão de certificados em um determinado período e monitorar a frequência de emissão.
 
 **Código da Consulta**:
 ```
@@ -22,6 +23,7 @@ db.certificado.find(
 ```
 
 ## Consultar Cursos com Nomes Específicos
+Busca cursos com nomes específicos, como "Desenvolvimento Web". Essa consulta pode ser usada para verificar se determinados cursos estão disponíveis na plataforma.
 
 **Código da Consulta**:
 ```
