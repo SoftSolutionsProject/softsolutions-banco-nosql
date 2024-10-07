@@ -1,0 +1,28 @@
+[
+    {
+      "_idCurso": 1,
+      "nomeCurso": "Desenvolvimento Web",
+      "modulos": []
+    },
+    {
+      "_idCurso": 2,
+      "nomeCurso": "Desenvolvimento de Apps",
+      "modulos": []
+    },
+    {
+      "_idCurso": 3,
+      "nomeCurso": "Python para Iniciantes",
+      "modulos": []
+    },
+    {
+      "_idCurso": 4,
+      "nomeCurso": "PHP",
+      "modulos": []
+    },
+    {
+      "_idCurso": 5,
+      "nomeCurso": "Usabilidade e UX",
+      "modulos": []
+    }
+]
+  

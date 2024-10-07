@@ -1,0 +1,214 @@
+[
+
+    {
+        "_idUser": 1,
+        "tipo": "administrador",
+        "nomeUsuario": "Paulo Sérgio Coelho",
+        "cpfUsuario": 13245678910,
+        "senha": "ps3456789",
+        "email": "paulo.coelho@softsolutions.com",
+        "telefone": "11912345678",                          
+        "endereco": {
+            "rua": "Rua Donizete Pereira de Carvalho",
+            "numero": 37,
+            "bairro": "Altos do Fortaleza",
+            "cidade": "Votorantim",
+            "estado": "SP",
+            "pais": "Brasil"
+        },
+        "localizacao": {
+            "type": "Point",
+            "coordinates": [-47.4191, -23.5340]
+        }
+    },
+    {
+        "_idUser": 2,
+        "tipo": "administrador",
+        "nomeUsuario": "Marcos Andrade",
+        "cpfUsuario": 12885876546,
+        "senha": "ma3456789",
+        "email": "marcos.andrade@softsolutions.com",
+        "telefone": "21912345678",
+        "endereco": {
+            "rua": "R. São Bento",
+            "numero": 5,
+            "bairro": "Centro",
+            "cidade": "Sorocaba",
+            "estado": "SP",
+            "pais": "Brasil"
+        },
+        "localizacao": {
+            "type": "Point",
+            "coordinates": [-47.4569, -23.4999]
+        }
+    },
+    {
+        "_idUser": 3,
+        "tipo": "administrador",
+        "nomeUsuario": "Júlio Santos",
+        "cpfUsuario": 12006543256,
+        "senha": "js3456789",
+        "email": "julio.santos@softsolutions.com",
+        "telefone": "31912345678",
+        "endereco": {
+            "rua": "Av. Dr. Afonso Vergueiro",
+            "numero": 2000,
+            "bairro": "Centro",
+            "cidade": "Sorocaba",
+            "estado": "SP",
+            "pais": "Brasil"
+        },
+        "localizacao": {
+            "type": "Point",
+            "coordinates": [-47.4705, -23.4983]
+        }
+    },
+    {
+        "_idUser": 4,
+        "tipo": "administrador",
+        "nomeUsuario": "Simas S. Filho",
+        "cpfUsuario": 12234563400,
+        "senha": "ss3456789",
+        "email": "simas.filho@softsolutions.com",
+        "telefone": "41912345678",
+        "endereco": {
+            "rua": "Av. Antonio Carlos Comitre",
+            "numero": 400,
+            "bairro": "Campolim",
+            "cidade": "Sorocaba",
+            "estado": "SP",
+            "pais": "Brasil"
+        },
+        "localizacao": {
+            "type": "Point",
+            "coordinates": [-47.4645, -23.5195]
+        }
+    },
+    {
+        "_idUser": 5,
+        "tipo": "administrador",
+        "nomeUsuario": "Sandra S. Lima",
+        "cpfUsuario": 12945678956,
+        "senha": "sl3456789",
+        "email": "sandra.lima@softsolutions.com",
+        "telefone": "85912345678",
+        "endereco": {
+            "rua": "Av. 31 de Março",
+            "numero": "400",
+            "bairro": "Centro",
+            "cidade": "Votorantim",
+            "estado": "SP",
+            "pais": "Brasil"
+        },
+        "localizacao": {
+            "type": "Point",
+            "coordinates": [-47.4474, -23.5420]
+        }
+    },
+    {
+        "_idUser": 6,
+        "tipo": "aluno",
+        "nomeUsuario": "João Silva",
+        "cpfUsuario": 10234567890,
+        "senha": "senha123",
+        "email": "joao.silva@hotmail.com",
+        "telefone": "11987654321",
+        "endereco": {
+            "rua": "R. Eneas de Campos",
+            "numero": "110",
+            "bairro": "Vila Nova",
+            "cidade": "Votorantim",
+            "estado": "SP",
+            "pais": "Brasil"
+        },
+        "localizacao": {
+            "type": "Point",
+            "coordinates": [-47.4180, -23.5388]
+        }
+    },
+    {
+        "_idUser": 7,
+        "tipo": "aluno",
+        "nomeUsuario": "Ana Souza",
+        "cpfUsuario": 22345678902,
+        "senha": "senhaABC",
+        "email": "ana.souza@ig.com",
+        "telefone": "21987654321",
+        "endereco": {
+            "rua": "R. Barão do Itaim",
+            "numero": "50",
+            "bairro": "Centro",
+            "cidade": "Itu",
+            "estado": "SP",
+            "pais": "Brasil"
+        },
+        "localizacao": {
+            "type": "Point",
+            "coordinates": [-47.2991, -23.2643]
+        }
+    },
+    {
+        "_idUser": 8,
+        "tipo": "aluno",
+        "nomeUsuario": "Pedro Lima",
+        "cpfUsuario": 32345678903,
+        "senha": "senhaDEF",
+        "email": "pedro.lima@gmail.com",
+        "telefone": "31987654321",
+        "endereco": {
+            "rua": "Av. Adolpho Massaglia",
+            "numero": "800",
+            "bairro": "Vossoroca",
+            "cidade": "Votorantim",
+            "estado": "SP",
+            "pais": "Brasil"
+        },
+        "localizacao": {
+            "type": "Point",
+            "coordinates": [-47.4734, -23.5498]
+        }
+    },
+    {
+        "_idUser": 9,
+        "tipo": "aluno",
+        "nomeUsuario": "Carla Ferreira",
+        "cpfUsuario": 42345678904,
+        "senha": "senhaGHI",
+        "email": "carla.ferreira@gmail.com",
+        "telefone": "41987654321",
+        "endereco": {
+            "rua": "Rua Maestro José Maria Dos Passos",
+            "numero": "205",
+            "bairro": "Vila Padre Bento",
+            "cidade": "Itu",
+            "estado": "SP",
+            "pais": "Brasil"
+        },
+        "localizacao": {
+            "type": "Point",
+            "coordinates": [-47.3149, -23.2537]
+        }
+    },
+    {
+        "_idUser": 10,
+        "tipo": "aluno",
+        "nomeUsuario": "Marcos Santos",
+        "cpfUsuario": 52345678905,
+        "senha": "senhaJKL",
+        "email": "marcos.santos@gmail.com",
+        "telefone": "85987654321",
+        "endereco": {
+            "rua": "rua Cristóvão Diniz",
+            "numero": "538",
+            "bairro": "Jardim do Estadio",
+            "cidade": "Itu",
+            "estado": "SP",
+            "pais": "Brasil"
+        },
+        "localizacao": {
+            "type": "Point",
+            "coordinates": [-47.2894, -23.2830]
+        }
+    }
+]
+

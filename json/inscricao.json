@@ -1,0 +1,38 @@
+[
+    {
+      "_idInscricao": 1,  
+      "statusInscricao": 1,
+      "_idModulo": 6,
+      "_idUser": 6,
+      "_idCurso": 1
+    },
+    {
+      "_idInscricao": 2,    
+      "statusInscricao": 1,
+      "_idModulo": 14,
+      "_idUser": 7,
+      "_idCurso": 2
+    },
+    {
+      "_idInscricao": 3,    
+      "statusInscricao": 1,
+      "_idModulo": 6,
+      "_idUser": 7,
+      "_idCurso": 1
+    },
+    {
+      "_idInscricao": 4,  
+      "statusInscricao": 1,
+      "_idModulo": 7,
+      "_idUser": 8,
+      "_idCurso": 2
+    },
+    {
+      "_idInscricao": 5,    
+      "statusInscricao": 1,
+      "_idModulo": 2,
+      "_idUser": 9,
+      "_idCurso": 1
+    }
+  ]
+  

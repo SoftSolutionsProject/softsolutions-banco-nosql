@@ -1,0 +1,28 @@
+[
+    {
+      "_idSetor": 1,
+      "nomeSetor": "Financeiro",
+      "emailSetor": "financeiro@softsolutions.com"
+    },
+    {
+      "_idSetor": 2,  
+      "nomeSetor": "Certificados",
+      "emailSetor": "certificados@softsolutions.com"
+    },
+    {
+      "_idSetor": 3,  
+      "nomeSetor": "Administração",
+      "emailSetor": "administracao@softsolutions.com"
+    },
+    {
+      "_idSetor": 4,   
+      "nomeSetor": "Suporte Técnico",
+      "emailSetor": "suporte@softsolutions.com"
+    },
+    {
+      "_idSetor": 5,   
+      "nomeSetor": "Conteúdos de Aula",
+      "emailSetor": "conteudos@softsolutions.com"
+    }
+]
+  

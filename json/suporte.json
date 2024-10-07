@@ -1,0 +1,33 @@
+[
+    {
+      "_idSuporte": 1,
+      "assunto": "Problema com pagamento",
+      "cpfUsuario": 10234567890,
+      "emailVisitante": "joao.silva@example.com"
+    },
+    {
+      "_idSuporte": 2,
+      "assunto": "Solicitação de certificado",
+      "cpfUsuario": 22345678902,
+      "emailVisitante": "ana.souza@example.com"
+    },
+    {
+      "_idSuporte": 3,
+      "assunto": "Dúvida sobre matrícula",
+      "cpfUsuario": 32345678903,
+      "emailVisitante": "pedro.lima@example.com"
+    },
+    {
+      "_idSuporte": 5,
+      "assunto": "Problema com cursos online",
+      "cpfUsuario": 42345678904,
+      "emailVisitante": "carla.ferreira@example.com"
+    },
+    {
+      "_idSuporte": 4,
+      "assunto": "Falha no sistema de suporte técnico",
+      "cpfUsuario": 52345678905,
+      "emailVisitante": "marcos.santos@example.com"
+    }
+]
+  
