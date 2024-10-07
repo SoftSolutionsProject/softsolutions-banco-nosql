@@ -2,7 +2,7 @@
 Retorna todos os certificados que foram emitidos após 1º de junho de 2017. Isso é útil para verificar a emissão de certificados em um determinado período e monitorar a frequência de emissão.
 
 **Código da Consulta**:
-```
+```javascript
 use('soft')
 db.certificado.find(
   { dataEmissao: { $gt: "2017-06-01" } }  
@@ -26,7 +26,7 @@ db.certificado.find(
 Busca cursos com nomes específicos, como "Desenvolvimento Web". Essa consulta pode ser usada para verificar se determinados cursos estão disponíveis na plataforma.
 
 **Código da Consulta**:
-```
+```javascript
 use('soft')
 db.cursos.find(
   { nomeCurso: { $in: ["Desenvolvimento Web"] } },
@@ -49,7 +49,8 @@ db.cursos.find(
 
 ## Consultar Inscrições de Alunos com Status Específico
 **Código da Consulta**:
-```
+Retorna todas as inscrições de alunos que possuem um status específico (por exemplo, statusInscricao: 1). Isso é útil para verificar quais alunos possuem inscrições ativas ou em um determinado estado.
+```javascript
 use('soft')
 db.inscricao.find(
   { statusInscricao: 1 },
@@ -100,7 +101,8 @@ db.inscricao.find(
 ## Consultar Módulos Concluídos de um Curso Específico
 **Código da Consulta**:
 Busca módulos que foram concluídos em um curso específico, identificando os módulos que já foram completados por alunos. Isso ajuda a monitorar o progresso dos alunos em um curso.
-```
+**Código da Consulta**:
+```javascript
 use('soft')
 db.modulo.find(
   { _idCurso: 1, _idConclusao: 1 },
@@ -123,7 +125,7 @@ db.modulo.find(
 ## Consultar Suporte Baseado em Assuntos Específicos com a palavra "problema"
 Retorna todos os registros de suporte que têm "problema" no campo de assunto. Ela é útil para identificar e analisar as questões que estão sendo relatadas pelos usuários.
 **Código da Consulta**:
-```
+```javascript
 use('soft')
 db.suporte.find(
   { assunto: { $regex: /problema/i } },
@@ -155,7 +157,7 @@ db.suporte.find(
 ## Consultar Usuários que São Alunos e Têm um CPF Específico
 Busca usuários que são alunos e possuem um CPF específico (cpfUsuario: 10234567890). É útil para localizar as informações de um aluno.
 **Código da Consulta**:
-```
+```javascript
 use('soft')
 db.usuario.find(
   { tipo: "aluno", cpfUsuario: { $eq: 10234567890 } },
@@ -277,6 +279,192 @@ db.usuario.find({
   },
   {
     "nomeUsuario": "Sandra S. Lima"
+  }
+]
+```
+
+## Junção entre Inscrições e Usuario (listar todas as inscrições para o curso "Desenvolvimento de Apps", retornando, ainda, informações sobre os alunos inscritos.)
+
+**Código da Consulta**:
+```javascript
+use('soft')
+db.inscricao.aggregate([
+  {
+      $match: { "_idCurso": 2 } 
+  },
+  {
+      $lookup: {
+          from: "usuario", 
+          localField: "_idUser", 
+          foreignField: "_idUser", 
+          as: "aluno_info"  
+      }
+  },
+  {
+    $project: {
+        _idInscricao: 1,
+        statusInscricao: 1,
+        "aluno_info.nomeUsuario": 1,
+        "aluno_info.email": 1,
+        "aluno_info.telefone": 1
+    }
+}
+])
+```
+
+**Resultado**:
+```json
+[
+  {
+    "_id": {
+      "$oid": "670341cc966385c7b1f202e5"
+    },
+    "_idInscricao": 2,
+    "statusInscricao": 1,
+    "aluno_info": [
+      {
+        "nomeUsuario": "Ana Souza",
+        "email": "ana.souza@ig.com",
+        "telefone": "21987654321"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "670341cc966385c7b1f202e7"
+    },
+    "_idInscricao": 4,
+    "statusInscricao": 1,
+    "aluno_info": [
+      {
+        "nomeUsuario": "Pedro Lima",
+        "email": "pedro.lima@gmail.com",
+        "telefone": "31987654321"
+      }
+    ]
+  }
+]
+```
+
+
+## Junção entre Inscrições e Cursos (Obter todas as inscrições e seus cursos correspondentes)
+**Código da Consulta**:
+```javascript
+use('soft')
+db.inscricao.aggregate([
+  {
+    $lookup: {
+      from: "cursos", 
+      localField: "_idCurso", 
+      foreignField: "_idCurso",
+      as: "curso" 
+    }
+  }
+])
+```
+
+**Resultado**:
+```json
+[
+  {
+    "_id": {
+      "$oid": "670341cc966385c7b1f202e4"
+    },
+    "_idInscricao": 1,
+    "statusInscricao": 1,
+    "_idModulo": 6,
+    "_idUser": 6,
+    "_idCurso": 1,
+    "curso": [
+      {
+        "_id": {
+          "$oid": "670341c8e4b49270958f115e"
+        },
+        "_idCurso": 1,
+        "nomeCurso": "Desenvolvimento Web",
+        "modulos": []
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "670341cc966385c7b1f202e5"
+    },
+    "_idInscricao": 2,
+    "statusInscricao": 1,
+    "_idModulo": 14,
+    "_idUser": 7,
+    "_idCurso": 2,
+    "curso": [
+      {
+        "_id": {
+          "$oid": "670341c8e4b49270958f115f"
+        },
+        "_idCurso": 2,
+        "nomeCurso": "Desenvolvimento de Apps",
+        "modulos": []
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "670341cc966385c7b1f202e6"
+    },
+    "_idInscricao": 3,
+    "statusInscricao": 1,
+    "_idModulo": 6,
+    "_idUser": 7,
+    "_idCurso": 1,
+    "curso": [
+      {
+        "_id": {
+          "$oid": "670341c8e4b49270958f115e"
+        },
+        "_idCurso": 1,
+        "nomeCurso": "Desenvolvimento Web",
+        "modulos": []
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "670341cc966385c7b1f202e7"
+    },
+    "_idInscricao": 4,
+    "statusInscricao": 1,
+    "_idModulo": 7,
+    "_idUser": 8,
+    "_idCurso": 2,
+    "curso": [
+      {
+        "_id": {
+          "$oid": "670341c8e4b49270958f115f"
+        },
+        "_idCurso": 2,
+        "nomeCurso": "Desenvolvimento de Apps",
+        "modulos": []
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "670341cc966385c7b1f202e8"
+    },
+    "_idInscricao": 5,
+    "statusInscricao": 1,
+    "_idModulo": 2,
+    "_idUser": 9,
+    "_idCurso": 1,
+    "curso": [
+      {
+        "_id": {
+          "$oid": "670341c8e4b49270958f115e"
+        },
+        "_idCurso": 1,
+        "nomeCurso": "Desenvolvimento Web",
+        "modulos": []
+      }
+    ]
   }
 ]
 ```
