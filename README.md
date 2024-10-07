@@ -14,7 +14,6 @@ Orientação:
 
 ### Nesta etapa do projeto, está sendo entregue a estruturação do banco de dados não relacional, incluindo:
 
-### Estruturação do Banco de Dados
 1. **Modelagem do Banco de Dados**:
    - **Modelo Entidade-Relacionamento (MER)**: Diagrama representando a estrutura do banco de dados, com entidades, atributos e relacionamentos.
    - **Coleções**: Criação de coleções para representar as entidades identificadas, utilizando tipos de dados como strings, números, datas, arrays e objetos aninhados.
