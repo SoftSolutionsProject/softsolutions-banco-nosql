@@ -10,7 +10,7 @@ db.usuario.find({
     tipo: "aluno",
     localizacao: {
         $geoWithin: {
-            $centerSphere: [[-47.4584, -23.5018], 20 / 6378.1] 
+            $centerSphere: [[-47.4584, -23.5018], 200 / 6378.1] 
         }
     }
 },{nomeUsuario:1, _id:0})

@@ -23,14 +23,14 @@
     {
       "_idInscricao": 4,  
       "statusInscricao": 1,
-      "_idModulo": 7,
+      "_idModulo": 14,
       "_idUser": 8,
       "_idCurso": 2
     },
     {
       "_idInscricao": 5,    
       "statusInscricao": 1,
-      "_idModulo": 2,
+      "_idModulo": 6,
       "_idUser": 9,
       "_idCurso": 1
     }
