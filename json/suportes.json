@@ -3,31 +3,36 @@
       "_idSuporte": 1,
       "assunto": "Problema com pagamento",
       "cpfUsuario": 10234567890,
-      "emailVisitante": "joao.silva@example.com"
+      "emailVisitante": "joao.silva@example.com",
+      "statusSuporte": "Aberto"
     },
     {
       "_idSuporte": 2,
       "assunto": "Solicitação de certificado",
       "cpfUsuario": 22345678902,
-      "emailVisitante": "ana.souza@example.com"
+      "emailVisitante": "ana.souza@example.com",
+      "statusSuporte": "Em Andamento"
     },
     {
       "_idSuporte": 3,
       "assunto": "Dúvida sobre matrícula",
       "cpfUsuario": 32345678903,
-      "emailVisitante": "pedro.lima@example.com"
+      "emailVisitante": "pedro.lima@example.com",
+      "statusSuporte": "Em Andamento"
     },
     {
       "_idSuporte": 5,
       "assunto": "Problema com cursos online",
       "cpfUsuario": 42345678904,
-      "emailVisitante": "carla.ferreira@example.com"
+      "emailVisitante": "carla.ferreira@example.com",
+      "statusSuporte": "Concluido"
     },
     {
       "_idSuporte": 4,
       "assunto": "Falha no sistema de suporte técnico",
       "cpfUsuario": 52345678905,
-      "emailVisitante": "marcos.santos@example.com"
+      "emailVisitante": "marcos.santos@example.com",
+      "statusSuporte": "Concluido"
     }
 ]
   

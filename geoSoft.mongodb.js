@@ -42,7 +42,7 @@ db.usuario.find({
             }
         }
     }
-}, {nomeUsuario: 1, _id: 0});
+}, {nomeUsuario: 1, _id: 0, "endereco.cidade": 1});
 
 
 
