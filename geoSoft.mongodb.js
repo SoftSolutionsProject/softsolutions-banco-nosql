@@ -1,12 +1,12 @@
 //criando os índices 2dspere
 use('soft')
-db.usuario.createIndex({localizacao: '2dsphere'})
+db.usuarios.createIndex({localizacao: '2dsphere'})
 
 
 
 //1. Encontrar alunos dentro de um raio de 20 km do centro de Sorocaba
 use('soft')
-db.usuario.find({
+db.usuarios.find({
     tipo: "aluno",
     localizacao: {
         $geoWithin: {
@@ -19,7 +19,7 @@ db.usuario.find({
 
 //2. Encontrar alunos dentro de um polígono definido na cidade de Itu
 use('soft')
-db.usuario.find({
+db.usuarios.find({
     tipo: "aluno",
     localizacao: {
         $geoWithin: {
@@ -48,7 +48,7 @@ db.usuario.find({
 
 //3. Encontrar administradores em um raio de 3 km de um endereço específico na cidade de Votorantim (Prefeitura Municipal)
 use('soft')
-db.usuario.find({
+db.usuarios.find({
     tipo: "administrador",
     localizacao: {
         $geoWithin: {

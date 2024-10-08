@@ -4,7 +4,7 @@ Retorna todos os certificados que foram emitidos após 1º de junho de 2017. Iss
 **Código da Consulta**:
 ```javascript
 use('soft')
-db.certificado.find(
+db.certificados.find(
   { dataEmissao: { $gt: "2017-06-01" } }  
 )
 ```
@@ -57,7 +57,7 @@ Retorna todas as inscrições de alunos que possuem um status específico (por e
 **Código da Consulta**:
 ```javascript
 use('soft')
-db.inscricao.find(
+db.inscricoes.find(
   { statusInscricao: 1 },
   { _idInscricao: 1, cpfUsuario: 1, _idCurso: 1 }
 )
@@ -108,27 +108,6 @@ db.inscricao.find(
 ## Consultar Módulos Concluídos de um Curso Específico
 Busca módulos que foram concluídos em um curso específico, identificando os módulos que já foram completados por alunos. Isso ajuda a monitorar o progresso dos alunos em um curso.
 
-**Código da Consulta**:
-```javascript
-use('soft')
-db.modulo.find(
-  { _idCurso: 1, _idConclusao: 1 },
-  { _idModulo: 1, nomeModulo: 1}
-)
-```
-
-**Resultado**:
-```json
-[
-  {
-    "_id": {
-      "$oid": "670341d33cb6876fc4f94f8e"
-    },
-    "_idModulo": 6,
-    "nomeModulo": "CONCLUIDO"
-  }
-]
-```
 
 ---
 
@@ -138,7 +117,7 @@ Retorna todos os registros de suporte que têm "problema" no campo de assunto. E
 **Código da Consulta**:
 ```javascript
 use('soft')
-db.suporte.find(
+db.suportes.find(
   { assunto: { $regex: /problema/i } },
   { _idSuporte: 1, assunto: 1, emailVisitante: 1 }
 )
@@ -174,7 +153,7 @@ Busca usuários que são alunos e possuem um CPF específico (cpfUsuario: 102345
 **Código da Consulta**:
 ```javascript
 use('soft')
-db.usuario.find(
+db.usuarios.find(
   { tipo: "aluno", cpfUsuario: { $eq: 10234567890 } },
   { _idUser: 1, nomeUsuario: 1, email: 1 }
 )
@@ -201,7 +180,7 @@ db.usuario.find(
 **Código da Consulta**:
 ```javascript
 use('soft')
-db.usuario.find({
+db.usuarios.find({
     tipo: "aluno",
     localizacao: {
         $geoWithin: {
@@ -227,7 +206,7 @@ db.usuario.find({
 **Código da Consulta**:
 ```javascript
 use('soft')
-db.usuario.find({
+db.usuarios.find({
     tipo: "aluno",
     localizacao: {
         $geoWithin: {
@@ -275,7 +254,7 @@ db.usuario.find({
 **Código da Consulta**:
 ```javascript
 use('soft')
-db.usuario.find({
+db.usuarios.find({
     tipo: "administrador",
     localizacao: {
         $geoWithin: {
@@ -307,7 +286,7 @@ db.usuario.find({
 **Código da Consulta**:
 ```javascript
 use('soft')
-db.inscricao.aggregate([
+db.inscricoes.aggregate([
   {
       $match: { "_idCurso": 2 } 
   },
@@ -372,7 +351,7 @@ db.inscricao.aggregate([
 **Código da Consulta**:
 ```javascript
 use('soft')
-db.inscricao.aggregate([
+db.inscricoes.aggregate([
   {
     $lookup: {
       from: "cursos", 

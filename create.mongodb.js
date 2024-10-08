@@ -2,11 +2,11 @@
 //CREATE CERTIFICADOS 
 
 const fs = require('fs')
-const dadosCertificado = fs.readFileSync("json/certificado.json")
-const jsonCertificado = JSON.parse(dadosCertificado)
+const dadosCertificados = fs.readFileSync("json/certificados.json")
+const jsonCertificados = JSON.parse(dadosCertificados)
 
 use('soft')
-db.certificado.insertMany(jsonCertificado) 
+db.certificados.insertMany(jsonCertificados) 
 
 
 
@@ -24,23 +24,11 @@ db.cursos.insertMany(jsonCursos)
 //CREATE INCRICAO
 
 const fs = require('fs')
-const dadosInscricao = fs.readFileSync("json/inscricao.json")
-const jsonInscricao = JSON.parse(dadosInscricao)
+const dadosInscricoes = fs.readFileSync("json/inscricoes.json")
+const jsonInscricoes = JSON.parse(dadosInscricoes)
 
 use('soft')
-db.inscricao.insertMany(jsonInscricao) 
-
-
-
-//CREATE MODULO
-
-const fs = require('fs')
-const dadosModulo = fs.readFileSync("json/modulo.json")
-const jsonModulo = JSON.parse(dadosModulo)
-
-use('soft')
-db.modulo.insertMany(jsonModulo)   
-
+db.inscricoes.insertMany(jsonInscricoes) 
 
 
 //CREATE SETORES
@@ -57,20 +45,20 @@ db.setores.insertMany(jsonSetores)
 //CREATE SUPORTE
 
 const fs = require('fs')
-const dadosSuporte = fs.readFileSync("json/suporte.json")
-const jsonSuporte = JSON.parse(dadosSuporte)
+const dadosSuportes = fs.readFileSync("json/suportes.json")
+const jsonSuportes = JSON.parse(dadosSuportes)
 
 use('soft')
-db.suporte.insertMany(jsonSuporte) 
+db.suportes.insertMany(jsonSuportes) 
 
 
 
 //CREATE USUARIO
 
 const fs = require('fs')
-const dadosUsuario = fs.readFileSync("json/usuario.json")
-const jsonUsuario = JSON.parse(dadosUsuario)
+const dadosUsuarios = fs.readFileSync("json/usuarios.json")
+const jsonUsuarios = JSON.parse(dadosUsuarios)
 
 use('soft')
-db.usuario.insertMany(jsonUsuario) 
+db.usuarios.insertMany(jsonUsuarios) 
 

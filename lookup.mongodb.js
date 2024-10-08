@@ -1,13 +1,13 @@
 //Junção entre Inscrições e Usuario (listar todas as inscrições para o curso "Desenvolvimento de Apps", retornando, ainda, informações sobre os alunos inscritos.)
 
 use('soft')
-db.inscricao.aggregate([
+db.inscricoes.aggregate([
   {
       $match: { "_idCurso": 2 } 
   },
   {
       $lookup: {
-          from: "usuario", 
+          from: "usuarios", 
           localField: "_idUser", 
           foreignField: "_idUser", 
           as: "aluno_info"  
@@ -28,7 +28,7 @@ db.inscricao.aggregate([
  
 //Junção entre Inscrições e Cursos (Obter todas as inscrições e seus cursos correspondentes)
 use('soft')
-db.inscricao.aggregate([
+db.inscricoes.aggregate([
   {
     $lookup: {
       from: "cursos", 
